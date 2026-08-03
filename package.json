@@ -1,0 +1,36 @@
+{
+  "name": "vuln-demo",
+  "version": "1.0.0",
+  "description": "Small Express app pinned to known-vulnerable dependency versions for Arguss Mode C demo",
+  "type": "commonjs",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "4.17.1",
+    "lodash": "4.17.20",
+    "minimist": "1.2.5",
+    "semver": "7.3.7",
+    "json5": "2.2.0",
+    "node-fetch": "2.6.6",
+    "qs": "6.5.2",
+    "axios": "0.21.1",
+    "tar": "6.1.0",
+    "ejs": "3.1.6",
+    "marked": "4.0.10",
+    "moment": "2.29.1",
+    "ws": "7.4.5",
+    "follow-redirects": "1.14.0",
+    "decode-uri-component": "0.2.0",
+    "glob-parent": "5.1.1",
+    "request": "2.88.2",
+    "jsonwebtoken": "8.5.0",
+    "handlebars": "4.7.6",
+    "pug": "3.0.0"
+  }
+}

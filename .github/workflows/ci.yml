@@ -1,0 +1,34 @@
+name: CI
+
+# Runs on PRs (which is what Mode C opens) and on pushes to main.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Cancel an in-flight run if a newer commit lands on the same PR/branch.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      # npm ci is reproducible from the lockfile. The setup-node cache above
+      # caches the npm download cache (~/.npm), so this skips network fetches
+      # on warm runs but still does the install work.
+      - run: npm ci
+
+      # Real tests, run by the workflow. This is what lets Arguss treat the
+      # repo as inside the auto-merge envelope instead of vetoing on
+      # pipeline.test_reality.
+      - run: npm test
