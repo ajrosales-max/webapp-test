@@ -31,6 +31,6 @@
     "request": "2.88.2",
     "jsonwebtoken": "8.5.0",
     "handlebars": "4.7.6",
-    "pug": "3.0.0"
+    "pug": "3.0.3"
   }
 }
