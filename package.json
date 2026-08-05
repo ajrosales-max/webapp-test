@@ -26,7 +26,7 @@
     "moment": "2.29.1",
     "ws": "7.4.5",
     "follow-redirects": "1.14.0",
-    "decode-uri-component": "0.2.0",
+    "decode-uri-component": "0.2.1",
     "glob-parent": "5.1.1",
     "request": "2.88.2",
     "jsonwebtoken": "8.5.0",
